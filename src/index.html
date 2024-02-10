@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body class="font-[Montserrat]">
-    <header class="flex justify-between items-center pt-6 px-10">
+    <header class="flex justify-between items-center pt-6 px-[4.5em]">
       <h2 class="text-3xl font-bold">Bandage</h2>
       <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
         <ul
@@ -34,12 +37,12 @@
     </header>
 
     <section>
-      <div class="flex justify-around items-center py-3 ">
-        <div class=" ">
-          <p class="font-bold text-[1.5em]">ABOUT COMPANY</p>
-          <h1 class="font-extrabold text-[5em] py-8">ABOUT US</h1>
-          <p class="text-[#737373] pb-8  text-xl">
-            We know how large objects will act, <br>
+      <div class="flex lg:justify-around items-center py-3 flex-col text-center lg:flex-row ">
+        <div class="lg:text-left ">
+          <p class="font-bold lg:text-[1.5em] text-[1em]">ABOUT COMPANY</p>
+          <h1 class="font-extrabold lg:text-[5em] text-[3em] py-8">ABOUT US</h1>
+          <p class="text-[#737373] pb-8 lg:text-xl text-[1.2em]">
+            We know how large objects will act, <br />
             but things on small scale
           </p>
           <button
@@ -53,28 +56,33 @@
         </div>
       </div>
 
-      <div class="flex justify-around items-center gap-8 p-[0.5em] pl-5 ">
+      <div class="flex flex-col lg:flex-row items-center gap-8 p-[0.5em] pl-5 text-center lg:text-left">
         <div class="mx-auto">
-          <p class="font-bold text-[15px] text-[#E74040]">Problems trying</p>
-          <h3 class="text-[24px] font-bold py-5">
-            Met minim Mollie non desert <br />
-            Alamo est sit cliquey dolor do
-            met sent.
-          </h3>
+            <p class="font-bold lg:text-[17px] text-[15px] text-[#E74040]">Problems trying</p>
+            <h3 class="lg:text-[24px] text-[20px] font-bold py-5">
+                Met minim Mollie non desert <br />
+                Alamo est sit cliquey dolor do met sent.
+            </h3>
         </div>
-        <p class="text-[#737373] text-[20px] mx-auto ">
-          Problems trying to resolve the conflict between the two major realms
-          of
-          <br />
-          Classical physics : Newtonian mechanics
+        <p class="text-[#737373] lg:text-[20px] text-[16px] mx-auto lg:mx-0">
+            Problems trying to resolve the conflict between the two major realms
+            of
+            <br />
+            Classical physics: Newtonian mechanics
         </p>
-      </div>
+    </div>
+    
+    
 
       <div>
-        <div class="lg:grid lg:grid-cols-4 px-[10em] py-[4em] md:grid md:grid-cols-1">
+        <div
+          class="lg:grid lg:grid-cols-4 lg:px-[10em] lg:py-[4em] md:grid md:grid-cols-2 text-center"
+        >
           <div class="text-center">
             <h1 id="happyCustomersCounter" class="text-[4em] font-bold">15K</h1>
-            <p class="text-[#737373] font-bold md:text-center">Happy Customers</p>
+            <p class="text-[#737373] font-bold md:text-center">
+              Happy Customers
+            </p>
           </div>
 
           <div class="text-center">
@@ -94,9 +102,9 @@
         </div>
       </div>
 
-      <div class="py-4">
+      <div class="py-4 flex justify-center items-center mx-5">
         <img
-          class="mx-auto w-[60em] h-[33.75em]"
+          class="lg:w-[60em] lg:h-[33.75em] lg:mx-auto mx-5"
           src="images/Video card.svg"
           alt=""
         />
@@ -105,8 +113,12 @@
 
     <section class="py-[2em]">
       <div class="flex flex-col items-center justify-center">
-        <h2 class="text-[2em] font-bold py-5 text-center sm:text-[40px]">Meet Our Team</h2>
-        <p class="text-[#737373] text-center font-bold text-[0.75em] sm:text-[1em]">
+        <h2 class="text-[2em] font-bold py-5 text-center sm:text-[40px]">
+          Meet Our Team
+        </h2>
+        <p
+          class="text-[#737373] text-center font-bold text-[0.75em] sm:text-[1em]"
+        >
           Problems trying to resolve the conflict between <br />
           the two major realms of Classical physics: Newtonian mechanics
         </p>
@@ -155,12 +167,14 @@
       </div>
     </section>
 
-    <section class="bg-light-gray-color">
+    <section class="bg-[#ECECEC] bg-opacity-2 py-6">
       <div class="flex flex-col items-center justify-center">
-        <h2 class="text-[2em] font-bold py-5 text-center sm:text-[40px]">
+        <h2 class="text-[2em] font-bold pb-5 pt-10 text-center sm:text-[40px]">
           Big Compagnies Are Here
         </h2>
-        <p class="text-[#737373] text-center font-bold text-[0.75em] sm:text-[1em]">
+        <p
+          class="text-[#737373] text-center font-bold text-[0.75em] sm:text-[1em]"
+        >
           Problems trying to resolve the conflict between <br />
           the two major realms of Classical physics: Newtonian mechanics
         </p>
@@ -178,165 +192,187 @@
     </section>
 
     <section>
-    
-        <div class="flex flex-cols-2
-         justify-between max-h-[40em] text-white">
-          <div class="bg-[#2A7CC7] flex items-center justify-center md:py-0 py-10">
-            <div class="lg:px-[3em] mx-auto flex flex-col space-y-10 top-0 md:justify-normal justify-center items-center md:items-start md:max-w-4xl max-w-xs p-5">
-            <h5 class="font-bold text-white text-[1.5em] text-center">WORK WITH US</h5>
-            <h2 class="text-[2.5em] font-bold text-center lg:text-left">Now Let's grow Yours</h2>
+      <div class="flex flex-cols-2 justify-between max-h-[40em] text-white">
+        <div
+          class="bg-[#2A7CC7] flex items-center justify-center md:py-0 py-10 w-full"
+        >
+          <div
+            class="lg:px-[3em] mx-auto flex flex-col space-y-10 top-0 md:justify-normal justify-center items-center md:items-start md:max-w-4xl max-w-xs p-5"
+          >
+            <h5 class="font-bold text-white text-[1.5em] text-center">
+              WORK WITH US
+            </h5>
+            <h2 class="text-[2.5em] font-bold text-center lg:text-left">
+              Now Let's grow Yours
+            </h2>
             <p class="md:w-1/2 md:text-start text-center">
               The gradual accumulation of information about atomic and
               small-scale behavior during the first quarter of the 20th
             </p>
-            <button class="border border-white text-white py-4 w-44 rounded-lg font-bold">Button</button>
-          </div>
-          </div>
-
-          <div>
-            <img class="hidden lg:block max-w-[50em] max-h-[40em]" src="images/dame.jpg" alt="" />
+            <button
+              class="border border-white text-white py-4 w-44 rounded-lg font-bold"
+            >
+              Button
+            </button>
           </div>
         </div>
-      
+
+        <div>
+          <img
+            class="hidden lg:block lg:max-w-[50em] lg:max-h-[40em]"
+            src="images/dame.jpg"
+            alt=""
+          />
+        </div>
+      </div>
     </section>
 
-      <div>
-          <div class="flex justify-between px-[3em] pb-[3em] pt-[3em]">
-              <h1 class="font-bold text-2xl">Bandage</h1>
-                  <div class="flex gap-4">
-                       <img src="images/facebook.svg" alt="">
-                       <img src="images/instagram.svg" alt="">
-                      <img src="images/twitter.svg" alt="">
+    <div>
+      <div
+        class="flex sm:justify-between flex-col gap-4 items-center px-[3em] pb-[3em] pt-[3em] lg:flex-row"
+      >
+        <h1 class="font-bold text-2xl">Bandage</h1>
+        <div class="flex gap-4">
+          <img src="images/facebook.svg" alt="" />
+          <img src="images/instagram.svg" alt="" />
+          <img src="images/twitter.svg" alt="" />
+        </div>
+      </div>
+      <hr class="max-w-[80rem] py-7 mx-auto" />
+    </div>
+
+    <footer>
+      <div class="grid lg:grid-cols-5 mx-10 gap-4 sm:grid-cols-2 pb-5">
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Company Info</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class=" ">About Us</li>
+            <li class="">Carrier</li>
+            <li class="">We are hiring</li>
+            <li class=" ">Blog</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Legal</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">About Us</li>
+            <li class="">Carrier</li>
+            <li class="">We are hiring</li>
+            <li class="">Blog</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Features</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">Business Marketing</li>
+            <li class="">User Analytic</li>
+            <li class="">Live Chat</li>
+            <li class="">Unlimited Support</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Resources</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">IOS & Android</li>
+            <li class="">Watch a Demo</li>
+            <li class="">Customers</li>
+            <li class="">API</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
+          <div class="flex flex-cols-2 my-5">
+            <input
+              class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[11em]"
+              type="text"
+              placeholder="Your Email"
+            />
+            <button
+              class="bg-[#23A6F0] text-white rounded-r-lg lg:w-[6em] w-[8em] -ml-[3em] mr-10"
+            >
+              Subscribe
+            </button>
           </div>
-          </div>
-          <hr class="max-w-[80rem] py-7 mx-auto">
+          <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
+        </div>
       </div>
 
-      <footer>
-        <div class="grid lg:grid-cols-5 md:grid-cols-1">
-
-          <div>
-            <h5 class="font-bold text-[1.3em]"> Company Info</h5>
-            <ul class="text-[1.1em] text-[#737373]">
-              <li class=" ">About Us</li>
-              <li class="">Carrier</li>
-              <li class="">We are hiring</li>
-              <li class=" ">Blog</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="font-bold text-[1.3em]">Legal</h5>
-            <ul class="text-[1.1em] text-[#737373] ">
-              <li class="">About Us</li>
-              <li class="">Carrier</li>
-              <li class="">We are hiring</li>
-              <li class="">Blog</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="font-bold text-[1.3em]">Features</h5>
-            <ul class="text-[1.1em] text-[#737373]">
-              <li class="">Business Marketing</li>
-              <li class="">User Analytic</li>
-              <li class="">Live Chat</li>
-              <li class="">Unlimited Support</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="font-bold text-[1.3em]">Resources</h5>
-            <ul class="text-[1.1em] gap-y-1 text-[#737373]">
-              <li class="">IOS & Android</li>
-              <li class="">Watch a Demo</li>
-              <li class="">Customers</li>
-              <li class="">API</li>
-            </ul>
-          </div>
-
-          <div>
-                  <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
-                  <div class="flex flex-cols-2">
-                    <input class="border border-gray-800 text-black py-4 w-[10em] rounded-lg text-left pl-3" 
-                    type="text" placeholder="Your Email">
-                    <button class="bg-[#23A6F0] text-white rounded-r-lg w-[6em] -ml-[3em] mr-10 ">Subscribe</button>
-                  </div>
-                  <p>Lore imp sum dolor Amit</p>
-          </div>
-
-        </div>
-      </footer>
+      <div class="bg-[#737373] bg-opacity-10 py-5">
+        <p class="font-bold text-[#737373]  text-center">Made With Love By Finland All Right Reserved</p>
+      </div>
+    </footer>
     <script>
       //1er
       function animateValue(obj, start, end, duration) {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-              if (!startTimestamp) startTimestamp = timestamp;
-              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-              obj.innerHTML = Math.floor(progress * (end - start) + start) + "K";
-              if (progress < 1) {
-                  window.requestAnimationFrame(step);
-              }
-          };
-          window.requestAnimationFrame(step);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(progress * (end - start) + start) + "K";
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
       }
-      
+
       const obj = document.getElementById("happyCustomersCounter");
       animateValue(obj, 0, 15, 1500);
 
       //2eme
       function animateValue(obj1, start, end, duration) {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-              if (!startTimestamp) startTimestamp = timestamp;
-              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-              obj1.innerHTML = Math.floor(progress * (end - start) + start) + "K";
-              if (progress < 1) {
-                  window.requestAnimationFrame(step);
-              }
-          };
-          window.requestAnimationFrame(step);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj1.innerHTML = Math.floor(progress * (end - start) + start) + "K";
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
       }
-      
+
       const obj1 = document.getElementById("MonthlyVisitors");
-      animateValue(obj1, 0, 150, 2000); 
+      animateValue(obj1, 0, 150, 2000);
 
       //3eme
       function animateVal1(obj2, start, end, duration) {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-              if (!startTimestamp) startTimestamp = timestamp;
-              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-              obj2.innerHTML = Math.floor(progress * (end - start) + start) ;
-              if (progress < 1) {
-                  window.requestAnimationFrame(step);
-              }
-          };
-          window.requestAnimationFrame(step);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj2.innerHTML = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
       }
-      
+
       const obj2 = document.getElementById("Countries");
-      animateVal1(obj2, 0, 15, 1000); 
+      animateVal1(obj2, 0, 15, 1000);
 
       //4eme
       function animateVal2(obj3, start, end, duration) {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-              if (!startTimestamp) startTimestamp = timestamp;
-              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-              obj3.innerHTML = Math.floor(progress * (end - start) + start) + "+";
-              if (progress < 1) {
-                  window.requestAnimationFrame(step);
-              }
-          };
-          window.requestAnimationFrame(step);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj3.innerHTML = Math.floor(progress * (end - start) + start) + "+";
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
       }
-      
-      const obj3 = document.getElementById("Partners");
-      animateVal2(obj3, 0, 100, 1500); 
 
-      </script>
-      
+      const obj3 = document.getElementById("Partners");
+      animateVal2(obj3, 0, 100, 1500);
+    </script>
   </body>
 </html>
