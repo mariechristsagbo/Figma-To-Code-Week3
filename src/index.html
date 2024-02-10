@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,16 +19,16 @@
         <ul
           class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
         >
-          <li class="hover:text-[#23A6F0]"><a href="">Home</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="">Teams</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="">Pricing</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="">Contact</a></li>
+          <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
+          <li class="hover:text-[#23A6F0]"><a href="index.html">Teams</a></li>
+          <li class="hover:text-[#23A6F0]"><a href="index.html">Pricing</a></li>
+          <li class="hover:text-[#23A6F0]"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="flex justify-between items-center gap-[45px]">
         <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
         <button
-          class="flex justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
+          class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
         >
           Become a member
           <span><img src="images/Vector.svg" alt="" /></span>
@@ -46,7 +46,7 @@
             but things on small scale
           </p>
           <button
-            class="text-white p-[1em] px-8 rounded-md text-[1em] font-bold bg-primary-color"
+            class="text-white p-[1em] px-8 rounded-md text-[1em] font-bold bg-primary-color drop-shadow-xl transition-transform duration-300 hover:scale-110"
           >
             Get Quote Now
           </button>
@@ -125,7 +125,7 @@
         <div
           class="flex md:flex-row flex-col md:space-x-10 md:space-y-0 space-y-10 md"
         >
-          <div class="w-[250px] lg:w-[316px]">
+          <div class="w-[250px] lg:w-[316px] transition-transform duration-300 hover:scale-110">
             <img src="images/media.svg" alt="" class="py-4" />
             <div class="text-center">
               <h5 class="font-bold text-md">Username</h5>
@@ -138,7 +138,7 @@
             </div>
           </div>
 
-          <div class="w-[250px] lg:w-[316px]">
+          <div class="w-[250px] lg:w-[316px] transition-transform duration-300 hover:scale-110">
             <img src="images/media (1).svg" alt="" class="py-4" />
             <div class="text-center">
               <h5 class="font-bold text-md">Username</h5>
@@ -151,7 +151,7 @@
             </div>
           </div>
 
-          <div class="w-[250px] lg:w-[316px]">
+          <div class="w-[250px] lg:w-[316px] transition-transform duration-300 hover:scale-110">
             <img src="images/media (2).svg" alt="" class="py-4" />
             <div class="text-center">
               <h5 class="font-bold text-md">Username</h5>
@@ -292,7 +292,7 @@
               placeholder="Your Email"
             />
             <button
-              class="bg-[#23A6F0] text-white rounded-r-lg lg:w-[6em] w-[8em] -ml-[3em] mr-10"
+              class="bg-[#23A6F0] text-white rounded-r-lg lg:w-[6em] w-[8em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110 drop-shadow"
             >
               Subscribe
             </button>
@@ -355,7 +355,7 @@
       }
 
       const obj2 = document.getElementById("Countries");
-      animateVal1(obj2, 0, 15, 1000);
+      animateVal1(obj2, 0, 15, 2000);
 
       //4eme
       function animateVal2(obj3, start, end, duration) {

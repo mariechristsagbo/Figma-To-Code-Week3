@@ -10,6 +10,7 @@ module.exports = {
       'hover-color' : '#2A7CC7',
     },
     extend: {
+     
       fontFamily :  {
         'sans' : ['sans-serif', 'Monstserrat'],
       }
