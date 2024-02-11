@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 50px 0px 50px;
+    padding: 50px 50px;
 flex-wrap: wrap;
 gap: 30px;
 }
@@ -161,10 +161,36 @@ font-weight: 400px;
         transition: all 0.5s ease;
     }
   }
+
+  @media screen and (max-width: 389px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6em;
+    padding-top: 0.6em; 
+  }
+
+  .header-container h1 {
+    font-size: 1em; 
+    margin-right: auto; 
+  }
+
+  .icon_responsive {
+    display: flex; 
+    gap: 10px;
+  }
+
+  .menu, .buttons_header {
+    display: none; 
+}
+  }
     </style>
   </head>
   <body class="font-[Montserrat]">
-    <header>
+    <header class="header-container flex items-center justify-between w-full">
+
+    
       <h1 style="font-size: 1.5em;" class="font-bold">Bandage</h1>
       <nav class="menu">
           <ul>
@@ -175,10 +201,11 @@ font-weight: 400px;
               <li><a href="contact.html">Contact</a></li>
           </ul>
       </nav>
-      <div class="buttons_header flex">
+      <div class="buttons_header lg:flex hidden">
           <button class="btn_login">Login</button>
           <button class="btn_member">Become a member <img src="Icons/Vector.png" alt=""></button>
       </div>
+
     <div class="icon_responsive">
       <img src="Icons/search.png" class="search" alt="">
       <img src="Icons/shop.png" class="shop" alt="">
@@ -188,7 +215,7 @@ font-weight: 400px;
 
     <section>
       <div
-        class="flex lg:justify-around items-center py-3 flex-col text-center lg:flex-row"
+        class="flex lg:justify-around items-center py-[5em] flex-col text-center lg:flex-row "
       >
         <div class="lg:text-left">
           <p class="font-bold lg:text-[1.5em] text-[1em]">ABOUT COMPANY</p>
