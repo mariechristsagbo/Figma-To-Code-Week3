@@ -16,10 +16,160 @@
    <script src="https://kit.fontawesome.com/1a7f93b397.js" crossorigin="anonymous"></script>
 </head>
 
+<style>
+.responsive-section {
+  display: block;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 2em;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8em;
+}
+
+h2 {
+  font-size: 2em; /* 2xl in Tailwind */
+  font-weight: bold;
+}
+
+.icon-container {
+  display: flex;
+  gap: 1em; /* Approximation of space-x-4 */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon {
+  width: auto; /* Adjust based on actual size of icons */
+}
+
+.menu {
+  display: flex;
+align-items: center;
+  justify-content: center;
+}
+
+.menu-list {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 1em;
+  color: #737373;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Approximation of space-y-10 */
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  right: 20px;
+  top: 48px; /* Adjust based on actual positioning needs */
+  z-index: 10;
+  font-size: 2em; /* 4xl in Tailwind */
+  color: rgba(115, 115, 115, 1);
+  cursor: pointer;
+}
+
+.menu-list a {
+  color: #737373;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.menu-list a:hover {
+  color: #23A6F0;
+}
+.responsive-section {
+  display: block; /* Visible par défaut */
+}
+
+/* Cache la section sur les écrans plus larges que 1024px */
+@media (min-width: 1024px) {
+  .responsive-section {
+    display: none;
+  }
+}
+
+
+.menu ul {
+  background-color: rgba(250, 250, 250, 1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex; 
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  text-align: center;
+  padding-left: 0;
+  list-style-type: none; 
+  transition: transform 0.5s ease;
+  transform: translateY(-100%);
+  z-index: 50; 
+}
+
+.menu ul a {
+  font-weight: bold; 
+}
+
+.menu ul a:hover {
+  color: #23A6F0;
+}
+
+.menu ul.mobile-menu {
+  margin-left: 0;
+  transform: translateY(0);
+}
+.menu {
+  position: relative; 
+}
+
+.cross {
+  position: absolute;
+  right: 1rem; 
+  top: 1rem;
+  z-index: 60; 
+  color: rgba(115, 115, 115, 1);
+  cursor: pointer;
+  font-size: 2rem; 
+}
+
+
+    .menu ul a {
+font-weight: 400px;
+    }
+    .menu ul a:hover {
+        color: #23A6F0;
+    }
+
+    .menu ul.mobile-menu {
+        margin-left: 0;
+        transform: translateY(0%);
+    }
+
+
+
+</style>
 <body>
     
     <section class="presentation">
-        <header>
+        <!-- <header>
             <h1 style="font-size: 1.5em;">Bandage</h1>
             <nav class="menu">
                 <ul>
@@ -39,7 +189,31 @@
             <img src="Icons/shop.png" class="shop" alt="">
             <img src="Icons/hamburger.png" class="hamburger" alt="">
           </div>
-        </header>
+        </header> -->
+
+        <section class="responsive-section">
+            <header class="header">
+                <div class="header-top">
+                    <h2>Bandage</h2>
+                    <div class="icon-container icon_responsive">
+                        <div><img src="images/search.svg" alt="" class="icon search"></div>
+                        <div><img src="images/shop.svg" alt="" class="icon shop"></div>
+                        <div><img src="images/menu.svg" alt="" class="icon hamburger"></div>
+                    </div>
+                </div>
+        
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <i class="fa-solid fa-xmark cross"></i>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+
 
         <div class="content">
             <p class="pr">PRICING</p>
@@ -53,6 +227,11 @@
             </p>
         </div>
     </section>
+
+    
+    
+
+
     <section class="pricing">
         <div class="details">
             <h2>Pricing</h2>
@@ -322,5 +501,18 @@
         </div>
     </footer>
 </body>
- <script src="index.js"></script>
+<script>
+     
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu ul");
+    const cross = document.querySelector(".cross");
+
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("mobile-menu");
+    });
+
+    cross.addEventListener("click", () => {
+      menu.classList.remove("mobile-menu");
+    });
+  </script>
 </html>
