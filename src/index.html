@@ -13,141 +13,59 @@
       rel="stylesheet"
     />
     <link href="./output.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/1a7f93b397.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1a7f93b397.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-      
- header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 50px;
-flex-wrap: wrap;
-gap: 30px;
-}
-header h1{
-color: rgba(37, 43, 66, 1);
-}
-.icon_responsive{
-    display: none;
-    cursor: pointer;
-    width: 100px;
-    justify-content:  space-between;
-}
-.cross{
-    font-size: 40px;
-     opacity: 0;
-}
+
 .menu ul {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
-}
-.menu ul a{
-    padding: 5px;
-    color:rgba(115, 115, 115, 1) ; 
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.1s;
-}
-.menu ul a:hover{
-    border-radius: 5px;
-    color: #23A6F0;
-    transition: 0.1s;
-}
-.btn_login{
-    background-color: white;
-    color: #23A6F0;
-    padding: 10px 20px;
-    border-style: none;
-    font-weight: bold;
-    font-size: 1em;
-    
-}
-.btn_member{
-    text-align: center;
-    background: #1678F2;
-    color: rgb(255, 255, 255);
-    padding: 0.85em;
-    font-size: 1em;
-    font-weight: bold;
-    border-style: none;
-    border-radius: 5px;
-    transition: all ease 0.2s;
-    display: flex;
-    gap: 0.3em;
-    align-items: center;
-}
-.btn_member:hover{
-    transition: all ease 0.2s;
-transform: scaleX(1.05);
-}
- 
-.content{
-    margin-top: 60px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.pr, .home{
-    color: rgba(115, 115, 115, 1);
-    font-size: 15px; 
-    font-weight: bold;
-}
-.title_content{
-    font-size: 3em;
-}
-.content p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
- 
-.content p a{
-    padding: 10px;
-    color: black;
-    text-decoration: none;
+  background-color: rgba(250, 250, 250, 1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex; 
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  text-align: center;
+  padding-left: 0;
+  list-style-type: none; 
+  transition: transform 0.5s ease;
+  transform: translateY(-100%);
+  z-index: 50; 
 }
 
-@media screen and (max-width:639px){
-.presentation{
-    position: relative;
+.menu ul a {
+  font-weight: bold; 
 }
-    .icon_responsive {
-        display:flex ;
-    }
 
-    .cross {
-        color: rgba(115, 115, 115, 1);
- opacity: 1;
-        position: absolute;
-        right: 20px;
-        top: 50px;
-        z-index: 5;
-    }
- 
-    .buttons_header{
-        display: none;
-    }
-    .menu ul {
-        background-color: rgba(250, 250, 250, 1);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        gap: 50px;
-        justify-content: center;
-        text-align: center;
-        padding-left: 0px;
-        margin-left: -100%;
-        transition: all 0.5s ease;
-        z-index: 5;
-    }
+.menu ul a:hover {
+  color: #23A6F0;
+}
+
+.menu ul.mobile-menu {
+  margin-left: 0;
+  transform: translateY(0);
+}
+.menu {
+  position: relative; 
+}
+
+.cross {
+  position: absolute;
+  right: 1rem; 
+  top: 1rem;
+  z-index: 60; 
+  color: rgba(115, 115, 115, 1);
+  cursor: pointer;
+  font-size: 2rem; 
+}
+
 
     .menu ul a {
 font-weight: 400px;
@@ -158,74 +76,82 @@ font-weight: 400px;
 
     .menu ul.mobile-menu {
         margin-left: 0;
-        transition: all 0.5s ease;
+        transform: translateY(0%);
     }
-  }
 
-  @media screen and (max-width: 389px) {
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.6em;
-    padding-top: 0.6em; 
-  }
 
-  .header-container h1 {
-    font-size: 1em; 
-    margin-right: auto; 
-  }
-
-  .icon_responsive {
-    display: flex; 
-    gap: 10px;
-  }
-
-  .menu, .buttons_header {
-    display: none; 
-}
-  }
     </style>
   </head>
   <body class="font-[Montserrat]">
-    <header class="header-container flex items-center justify-between w-full">
-
-    
-      <h1 style="font-size: 1.5em;" class="font-bold">Bandage</h1>
-      <nav class="menu">
-          <ul>
-               <i class="fa-solid fa-xmark cross"></i>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="teams.html">Teams</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
+    <header class="lg:block hidden">
+      <div class="flex justify-between items-center pt-6 px-[4.5em]">
+        <h2 class="text-3xl font-bold">Bandage</h2>
+        <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
+          <ul
+            class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
+          >
+            <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
+            <li class="hover:text-[#23A6F0]"><a href="teams.html">Teams</a></li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="pricing.html">Pricing</a>
+            </li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="contact.html">Contact</a>
+            </li>
           </ul>
-      </nav>
-      <div class="buttons_header lg:flex hidden">
-          <button class="btn_login">Login</button>
-          <button class="btn_member">Become a member <img src="Icons/Vector.png" alt=""></button>
+        </nav>
+        <div class="flex justify-between items-center gap-[45px]">
+          <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
+          <button
+            class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
+          >
+            Become a member
+            <span><img src="images/Vector.svg" alt="" /></span>
+          </button>
+        </div>
       </div>
+    </header>
 
-    <div class="icon_responsive">
-      <img src="Icons/search.png" class="search" alt="">
-      <img src="Icons/shop.png" class="shop" alt="">
-      <img src="Icons/hamburger.png" class="hamburger" alt="">
-    </div>
-  </header>
+    <section class="block lg:hidden">
+      <header class="flex flex-col items-center px-2 pt-4  ">
+           <div class="flex items-center justify-between w-full mb-8">
+            <h2 class="text-2xl font-bold"> Bandage </h2>
+            <div class="flex space-x-4 justify-center items-center icon_responsive cursor-pointer">
+              <div><img src="images/search.svg" alt="" srcset="" class="search"></div>
+              <div><img src="images/shop.svg" alt="" class="shop"></div>
+              <div><img src="images/menu.svg" alt="" class="hamburger"></div>
+            </div>
+           </div>
+
+           <nav class="menu flex items-center justify-center">
+            <ul class=" font-bold text-[1em] text-[#737373] space-y-10">
+              <i class="fa-solid fa-xmark cross absolute right-5 top-12 z-10 text-4xl text-gray-400 cursor-pointer"></i>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+   
+         
+      </header>
+    </section>
+
+
 
     <section>
       <div
-        class="flex lg:justify-around items-center py-[5em] flex-col text-center lg:flex-row "
+        class="flex lg:justify-around items-center lg:py-[1em] py-[5em] flex-col text-center lg:flex-row"
       >
         <div class="lg:text-left">
-          <p class="font-bold lg:text-[1.5em] text-[1em]">ABOUT COMPANY</p>
-          <h1 class="font-extrabold lg:text-[5em] text-[3em] py-8">ABOUT US</h1>
-          <p class="text-[#737373] pb-8 lg:text-xl text-[1em]">
+          <p class="font-bold lg:text-[1.5em] text-[1em] sm:text-[1.2em]">ABOUT COMPANY</p>
+          <h1 class="font-extrabold lg:text-[5em] text-[2em] sm:text-[4em] py-4">ABOUT US</h1>
+          <p class="text-[#737373] pb-8 lg:text-xl text-[0.90em]">
             We know how large objects will act, <br />
             but things on small scale
           </p>
           <button
-            class="text-white p-[1em] px-8 rounded-md text-[1em] font-bold bg-primary-color drop-shadow-xl transition-transform duration-300 hover:scale-110"
+            class="text-white lg:p-[1em] p-[0.75em] px-8 rounded-md text-[1em] font-bold bg-primary-color drop-shadow-xl transition-transform duration-300 hover:scale-110"
           >
             Get Quote Now
           </button>
@@ -247,7 +173,9 @@ font-weight: 400px;
             Alamo est sit cliquey dolor do met sent.
           </h3>
         </div>
-        <p class="text-[#737373] lg:text-[18px] text-[14px] mx-auto lg:mx-0 lg:pr-6">
+        <p
+          class="text-[#737373] lg:text-[18px] text-[14px] mx-auto lg:mx-0 lg:pr-6"
+        >
           Problems trying to resolve the conflict between the two major realms
           of
           <br />
@@ -472,14 +400,14 @@ font-weight: 400px;
 
         <div>
           <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
-          <div class="flex flex-cols-2 my-5">
+          <div class="flex flex-cols-2 my-6 ">
             <input
-              class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[11em]"
+              class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[10em] text-[1em]"
               type="text"
               placeholder="Your Email"
             />
             <button
-              class="bg-[#23A6F0] text-white rounded-r-lg lg:w-[6em] w-[8em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110 drop-shadow"
+              class="bg-[#23A6F0] text-white text-[0.90em] rounded-r-lg lg:w-[6em] w-[6em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110 drop-shadow"
             >
               Subscribe
             </button>
@@ -564,19 +492,18 @@ font-weight: 400px;
       animateVal2(obj3, 0, 100, 1500);
     </script>
     <script>
-      // barre de navigation responsive
-      const hamburger = document.querySelector(".hamburger")
-      const menu = document.querySelector(".menu ul")
-      const cross = document.querySelector(".cross")
-  
-      hamburger.addEventListener('click', () => {
-          menu.classList.toggle('mobile-menu')
-      })
-  
-      cross.addEventListener('click', () => {
-          menu.classList.remove('mobile-menu')
-  
-      })
-  </script>
+     
+      const hamburger = document.querySelector(".hamburger");
+      const menu = document.querySelector(".menu ul");
+      const cross = document.querySelector(".cross");
+
+      hamburger.addEventListener("click", () => {
+        menu.classList.toggle("mobile-menu");
+      });
+
+      cross.addEventListener("click", () => {
+        menu.classList.remove("mobile-menu");
+      });
+    </script>
   </body>
 </html>

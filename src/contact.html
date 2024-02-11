@@ -12,34 +12,131 @@
       rel="stylesheet"
     />
     <link href="./output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/1a7f93b397.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+
+        .menu ul {
+          background-color: rgba(250, 250, 250, 1);
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          display: flex; 
+          flex-direction: column;
+          gap: 50px;
+          justify-content: center;
+          text-align: center;
+          padding-left: 0;
+          list-style-type: none; 
+          transition: transform 0.5s ease;
+          transform: translateY(-100%);
+          z-index: 50; 
+        }
+        
+        .menu ul a {
+          font-weight: bold; 
+        }
+        
+        .menu ul a:hover {
+          color: #23A6F0;
+        }
+        
+        .menu ul.mobile-menu {
+          margin-left: 0;
+          transform: translateY(0);
+        }
+        .menu {
+          position: relative; 
+        }
+        
+        .cross {
+          position: absolute;
+          right: 1rem; 
+          top: 1rem;
+          z-index: 60; 
+          color: rgba(115, 115, 115, 1);
+          cursor: pointer;
+          font-size: 2rem; 
+        }
+        
+        
+            .menu ul a {
+        font-weight: 400px;
+            }
+            .menu ul a:hover {
+                color: #23A6F0;
+            }
+        
+            .menu ul.mobile-menu {
+                margin-left: 0;
+                transform: translateY(0%);
+            }
+        
+        
+            </style>
   </head>
   <body class="font-[Montserrat]">
-    <header class="flex justify-between items-center pt-6 px-[4.5em]">
-      <h2 class="text-3xl font-bold">Bandage</h2>
-      <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
-        <ul
-          class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
-        >
-          <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="teams.html">Teams</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="pricing.html">Pricing</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="flex justify-between items-center gap-[45px]">
-        <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
-        <button
-          class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
-        >
-          Become a member
-          <span><img src="images/Vector.svg" alt="" /></span>
-        </button>
+    <header class="lg:block hidden">
+        <div class="flex justify-between items-center pt-6 px-[4.5em]">
+        <h2 class="text-3xl font-bold">Bandage</h2>
+        <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
+          <ul
+            class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
+          >
+            <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
+            <li class="hover:text-[#23A6F0]"><a href="teams.html">Teams</a></li>
+            <li class="hover:text-[#23A6F0]"><a href="pricing.html">Pricing</a></li>
+            <li class="hover:text-[#23A6F0]"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex justify-between items-center gap-[45px]">
+          <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
+          <button
+            class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
+          >
+            Become a member
+            <span><img src="images/Vector.svg" alt="" /></span>
+          </button>
+        </div>
       </div>
-    </header>
+      </header>
+
+      <section class="block lg:hidden">
+        <header class="flex flex-col items-center px-2 pt-4  ">
+             <div class="flex items-center justify-between w-full mb-8">
+              <h2 class="text-2xl font-bold"> Bandage </h2>
+              <div class="flex space-x-4 justify-center items-center icon_responsive cursor-pointer">
+                <div><img src="images/search.svg" alt="" srcset="" class="search"></div>
+                <div><img src="images/shop.svg" alt="" class="shop"></div>
+                <div><img src="images/menu.svg" alt="" class="hamburger"></div>
+              </div>
+             </div>
+  
+             <nav class="menu flex items-center justify-center">
+              <ul class=" font-bold text-[1em] text-[#737373] space-y-10">
+                <i class="fa-solid fa-xmark cross absolute right-5 top-12 z-10 text-4xl text-gray-400 cursor-pointer"></i>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="teams.html">Teams</a></li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </nav>
+     
+           
+        </header>
+      </section>
+  
 
     <section>
       <div
-        class="flex lg:justify-around items-center py-3 flex-col text-center lg:flex-row"
+        class="flex lg:justify-around items-center lg:py-3 py-[4em] flex-col text-center lg:flex-row"
       >
         <div class="lg:text-left lg:pl-[2em]">
           <p class="font-bold lg:text-[1em] text-[1em]">CONTACT US</p>
@@ -194,21 +291,21 @@
         </div>
 
         <div>
-          <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
-          <div class="flex flex-cols-2 my-5">
-            <input
-              class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[11em]"
-              type="text"
-              placeholder="Your Email"
-            />
-            <button
-              class="bg-[#23A6F0] text-white rounded-r-lg lg:w-[6em] w-[8em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110"
-            >
-              Subscribe
-            </button>
+            <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
+            <div class="flex flex-cols-2 my-6 ">
+              <input
+                class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[10em] text-[1em]"
+                type="text"
+                placeholder="Your Email"
+              />
+              <button
+                class="bg-[#23A6F0] text-white text-[0.90em] rounded-r-lg lg:w-[6em] w-[6em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110 drop-shadow"
+              >
+                Subscribe
+              </button>
+            </div>
+            <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
           </div>
-          <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
-        </div>
       </div>
 
       <div class="bg-[#737373] bg-opacity-10 py-5">
@@ -217,5 +314,20 @@
         </p>
       </div>
     </footer>
+
+    <script>
+        // barre de navigation responsive
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".menu ul");
+        const cross = document.querySelector(".cross");
+  
+        hamburger.addEventListener("click", () => {
+          menu.classList.toggle("mobile-menu");
+        });
+  
+        cross.addEventListener("click", () => {
+          menu.classList.remove("mobile-menu");
+        });
+      </script>
   </body>
 </html>

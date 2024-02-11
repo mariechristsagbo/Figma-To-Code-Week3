@@ -417,7 +417,7 @@ font-size: 14px;
 
     .cross {
         color: rgba(115, 115, 115, 1);
- opacity: 1;
+        opacity: 1;
         position: absolute;
         right: 20px;
         top: 50px;
