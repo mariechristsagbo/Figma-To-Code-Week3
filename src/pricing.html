@@ -1,518 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bandage E-commerce UI</title>
     <link rel="icon" href="images/favicon.png" type="" />
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap"
       rel="stylesheet"
     />
-   <script src="https://kit.fontawesome.com/1a7f93b397.js" crossorigin="anonymous"></script>
-</head>
+    <link href="./output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/1a7f93b397.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .menu ul {
+        background-color: rgba(250, 250, 250, 1);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        text-align: center;
+        padding-left: 0;
+        list-style-type: none;
+        transition: transform 0.5s ease;
+        transform: translateY(-100%);
+        z-index: 50;
+      }
 
-<style>
-.responsive-section {
-  display: block;
-}
+      .menu ul a {
+        font-weight: bold;
+      }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-top: 2em;
-}
+      .menu ul a:hover {
+        color: #23a6f0;
+      }
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 8em;
-}
+      .menu ul.mobile-menu {
+        margin-left: 0;
+        transform: translateY(0);
+      }
+      .menu {
+        position: relative;
+      }
 
-h2 {
-  font-size: 2em; /* 2xl in Tailwind */
-  font-weight: bold;
-}
+      .cross {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 60;
+        color: rgba(115, 115, 115, 1);
+        cursor: pointer;
+        font-size: 2rem;
+      }
 
-.icon-container {
-  display: flex;
-  gap: 1em; /* Approximation of space-x-4 */
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+      .menu ul a {
+        font-weight: 400px;
+      }
+      .menu ul a:hover {
+        color: #23a6f0;
+      }
 
-.icon {
-  width: auto; /* Adjust based on actual size of icons */
-}
-
-.menu {
-  display: flex;
-align-items: center;
-  justify-content: center;
-}
-
-.menu-list {
-  list-style-type: none;
-  font-weight: bold;
-  font-size: 1em;
-  color: #737373;
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Approximation of space-y-10 */
-  position: relative;
-}
-
-.cross {
-  position: absolute;
-  right: 20px;
-  top: 48px; /* Adjust based on actual positioning needs */
-  z-index: 10;
-  font-size: 2em; /* 4xl in Tailwind */
-  color: rgba(115, 115, 115, 1);
-  cursor: pointer;
-}
-
-.menu-list a {
-  color: #737373;
-  text-decoration: none;
-  transition: color 0.5s ease;
-}
-
-.menu-list a:hover {
-  color: #23A6F0;
-}
-.responsive-section {
-  display: block; /* Visible par défaut */
-}
-
-/* Cache la section sur les écrans plus larges que 1024px */
-@media (min-width: 1024px) {
-  .responsive-section {
-    display: none;
-  }
-}
-
-
-.menu ul {
-  background-color: rgba(250, 250, 250, 1);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex; 
-  flex-direction: column;
-  gap: 50px;
-  justify-content: center;
-  text-align: center;
-  padding-left: 0;
-  list-style-type: none; 
-  transition: transform 0.5s ease;
-  transform: translateY(-100%);
-  z-index: 50; 
-}
-
-.menu ul a {
-  font-weight: bold; 
-}
-
-.menu ul a:hover {
-  color: #23A6F0;
-}
-
-.menu ul.mobile-menu {
-  margin-left: 0;
-  transform: translateY(0);
-}
-.menu {
-  position: relative; 
-}
-
-.cross {
-  position: absolute;
-  right: 1rem; 
-  top: 1rem;
-  z-index: 60; 
-  color: rgba(115, 115, 115, 1);
-  cursor: pointer;
-  font-size: 2rem; 
-}
-
-
-    .menu ul a {
-font-weight: 400px;
-    }
-    .menu ul a:hover {
-        color: #23A6F0;
-    }
-
-    .menu ul.mobile-menu {
+      .menu ul.mobile-menu {
         margin-left: 0;
         transform: translateY(0%);
-    }
+      }
+
+      .trial {
+        padding: 50px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      /* deuxieme section : Pricing */
+      .pricing {
+        background-color: rgba(250, 250, 250, 1);
+        padding: 10px 0px;
+      }
+
+      .details {
+        margin-top: 60px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .details h2,
+      .duration span {
+        font-weight: bold;
+      }
+      .description {
+        margin: auto;
+      }
+      .duration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .save {
+        background: rgba(178, 227, 255, 1);
+        color: rgba(35, 166, 240, 1);
+        border-style: none;
+        border-radius: 30px;
+        padding: 10px;
+      }
+      .options {
+        padding-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0px;
+      }
+      .box1,
+      .box2,
+      .box3 {
+        width: 327px;
+        padding: 30px 0px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 15px;
+        text-align: center;
+        border: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: rgba(35, 166, 240, 1);
+        transition: all ease 0.5s;
+      }
+      .box1:hover,
+      .box2:hover,
+      .box3:hover {
+        transition: all ease 0.5s;
+        transform: scale(1.05);
+      }
+      .box2 {
+        height: 650px;
+        background-color: rgba(37, 43, 66, 1);
+        color: white;
+      }
+      .price-1,
+      .price-2,
+      .price-3 {
+        font-weight: bold;
+        color: rgba(35, 166, 240, 1);
+        text-align: left;
+        height: 60px;
+        font-size: 40px;
+        position: relative;
+      }
+      .price-1 {
+        width: 120px;
+      }
+      .price-2 {
+        width: 160px;
+      }
+      .price-3 {
+        width: 180px;
+      }
+
+      .value {
+        font-size: 20px;
+        position: absolute;
+        top: -20px;
+        right: 70px;
+      }
+      .tranche {
+        font-size: 14px;
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+      }
+
+      .nature {
+        color: rgba(37, 43, 66, 1);
+        font-weight: bold;
+      }
+      .nature-excp {
+        color: white;
+      }
+      .box_detail {
+        width: 150px;
+        margin: auto;
+      }
+      .advantages {
+        margin: 20px 0px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .advantages img {
+        margin-right: 20px;
+      }
+      .advantages span,
+      .description,
+      .desc_faqs {
+        color: rgba(115, 115, 115, 1);
+      }
+      .adv {
+        font-weight: bolder;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+      }
+      .btn_try_dark,
+      .btn_try_blue {
+        width: 246px;
+        height: 52px;
+        text-align: center;
+        background: rgba(37, 43, 66, 1);
+        color: rgb(255, 255, 255);
+        border-style: none;
+        border-radius: 5px;
+      }
+      .btn_try_blue {
+        background-color: rgba(35, 166, 240, 1);
+        font-weight: bold;
+      }
+      .brands {
+        padding: 80px 0px;
+        margin: auto;
+        text-align: center;
+        color: rgba(37, 43, 66, 1);
+      }
+
+      .FAQs {
+        padding: 50px 0px;
+      }
+      .desc_faqs {
+        text-align: center;
+        margin: auto;
+      }
+      .FAQs_items {
+        margin: 30px 0px;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .FAQ_item {
+        width: 450px;
+        position: relative;
+        padding: 20px 40px;
+      }
+      .FAQ_item p {
+        color: rgba(115, 115, 115, 1);
+      }
+      .FAQ_item h5 {
+        margin-bottom: 15px;
+      }
+      .arrow {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+      }
+      .support {
+        color: rgba(115, 115, 115, 1);
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .content {
+        margin-top: 60px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .social_media {
+        display: flex;
+        gap: 2em;
+      }
 
 
-
-</style>
-<body>
-    
-    <section class="presentation">
-        <!-- <header>
-            <h1 style="font-size: 1.5em;">Bandage</h1>
-            <nav class="menu">
-                <ul>
-                     <i class="fa-solid fa-xmark cross"></i>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="teams.html">Teams</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="buttons_header">
-                <button class="btn_login">Login</button>
-                <button class="btn_member">Become a member <img src="Icons/Vector.png" alt=""></button>
-            </div>
-          <div class="icon_responsive">
-            <img src="Icons/search.png" class="search" alt="">
-            <img src="Icons/shop.png" class="shop" alt="">
-            <img src="Icons/hamburger.png" class="hamburger" alt="">
-          </div>
-        </header> -->
-
-        <section class="responsive-section">
-            <header class="header">
-                <div class="header-top">
-                    <h2>Bandage</h2>
-                    <div class="icon-container icon_responsive">
-                        <div><img src="images/search.svg" alt="" class="icon search"></div>
-                        <div><img src="images/shop.svg" alt="" class="icon shop"></div>
-                        <div><img src="images/menu.svg" alt="" class="icon hamburger"></div>
-                    </div>
-                </div>
-        
-                <nav class="menu">
-                    <ul class="menu-list">
-                        <i class="fa-solid fa-xmark cross"></i>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="teams.html">Teams</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </section>
-
-
-        <div class="content">
-            <p class="pr">PRICING</p>
-            <h1 class="title_content">
-                Simple Pricing
-            </h1>
-            <p>
-                <a href="" class="home">Home</a>
-                <img src="Icons/icn arrow-right icn-xs-mute.png" alt="">
-                <a href="">Pricing</a>
-            </p>
+      .pr, .home{
+    color: rgba(115, 115, 115, 1);
+    font-size: 15px; 
+    font-weight: bold;
+}
+.title_content{
+    font-size: 3em;
+}
+.content p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.content p a{
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+    </style>
+  </head>
+  <body class="font-[Montserrat]">
+    <header class="lg:block hidden">
+      <div class="flex justify-between items-center pt-6 px-[4.5em]">
+        <h2 class="text-3xl font-bold">Bandage</h2>
+        <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
+          <ul
+            class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
+          >
+            <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
+            <li class="hover:text-[#23A6F0]"><a href="teams.html">Teams</a></li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="pricing.html">Pricing</a>
+            </li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex justify-between items-center gap-[45px]">
+          <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
+          <button
+            class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
+          >
+            Become a member
+            <span><img src="images/Vector.svg" alt="" /></span>
+          </button>
         </div>
+      </div>
+    </header>
+
+    <section class="block lg:hidden">
+      <header class="flex flex-col items-center px-[1.5em] pt-[2em]">
+        <div class="flex items-center justify-between w-full mb-8">
+          <h2 class="text-2xl font-bold">Bandage</h2>
+          <div
+            class="flex space-x-4 justify-center items-center icon_responsive cursor-pointer"
+          >
+            <div>
+              <img src="images/search.svg" alt="" srcset="" class="search" />
+            </div>
+            <div><img src="images/shop.svg" alt="" class="shop" /></div>
+            <div><img src="images/menu.svg" alt="" class="hamburger" /></div>
+          </div>
+        </div>
+
+        <nav class="menu flex items-center justify-center">
+          <ul class="font-bold text-[1em] text-[#737373] space-y-10">
+            <i
+              class="fa-solid fa-xmark cross absolute right-5 top-12 z-10 text-4xl text-gray-400 cursor-pointer"
+            ></i>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     </section>
 
-    
-    
-
+    <section class="presentation">
+      <div class="content">
+        <p class="pr">PRICING</p>
+        <h1 class="title_content font-bold">Simple Pricing</h1>
+        <p>
+          <a href="" class="home">Home</a>
+          <img src="Icons/icn arrow-right icn-xs-mute.png" alt="" />
+          <a href="">Pricing</a>
+        </p>
+      </div>
+    </section>
 
     <section class="pricing">
-        <div class="details">
-            <h2>Pricing</h2>
-            <p class="description">
-                Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian
-                mechanics
-            </p>
-            <p class="duration">
-                <span>Monthly</span>
-                <img src="Icons/form-check-input.png" alt="">
-                <span>Yearly</span>
-                <button class="save" style="font-weight: bold;">Save 25%</button>
-            </p>
+      <div class="details">
+        <h2>Pricing</h2>
+        <p class="description">
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics: Newtonian mechanics
+        </p>
+        <p class="duration">
+          <span>Monthly</span>
+          <img src="Icons/form-check-input.png" alt="" />
+          <span>Yearly</span>
+          <button class="save" style="font-weight: bold">Save 25%</button>
+        </p>
+      </div>
+      <div class="options">
+        <div class="box1">
+          <span class="nature">FREE</span>
+          <p class="box_detail">Organize across all apps by hand</p>
+          <p class="price-1">
+            0
+            <span class="value">$</span>
+            <span class="tranche">per Month</span>
+          </p>
+          <div class="advantages">
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>1GB Cloud storage</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>Email and community support</p>
+            </div>
+          </div>
+          <button class="btn_try_dark" style="font-weight: bold">
+            Try for free
+          </button>
         </div>
-        <div class="options">
-            <div class="box1">
-                <span class="nature">FREE</span>
-                <p class="box_detail">Organize across all apps by hand</p>
-                <p class="price-1">0
-                    <span class="value">$</span>
-                <span class="tranche">per Month</span>
-                </p>
-                <div class="advantages">
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>1GB Cloud storage</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>Email and community support</p>
-                    </div>
-                </div>
-                <button class="btn_try_dark" style="font-weight: bold;">Try for free</button>
-            </div>
-            <div class="box2">
-                <span class="nature-excp">STANDARD</span>
-                <p class="box_detail">Organize across all apps by hand</p>
-                <p class="price-2">9.99
-                    <span class="value">$</span>
-                <span class="tranche">per Month</span>
-                </p>
-                
-                <div class="advantages">
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>1GB Cloud storage</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>Email and community support</p>
-                    </div>
-                </div>
-                <button class="btn_try_blue">Try for free</button>
-            </div>
-            <div class="box3">
-                <span class="nature">PREMIUM</span>
-                <p class="box_detail">Organize across all apps by hand</p>
-                <p class="price-3">19.99
-                    <span class="value">$</span>
-                <span class="tranche">per Month</span>
-                </p>
-                <div class="advantages">
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs secondary-color-1.png" alt="">
-                        <p>Unlimited product updates</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>1GB Cloud storage</p>
-                    </div>
-                    <div class="adv">
-                        <img src="Icons/icn-circle circle-xs mute.png" alt="">
-                        <p>Email and community support</p>
-                    </div>
-                </div>
-                <button class="btn_try_blue">Try for free</button>
-            </div>
-        </div>
+        <div class="box2">
+          <span class="nature-excp">STANDARD</span>
+          <p class="box_detail">Organize across all apps by hand</p>
+          <p class="price-2">
+            9.99
+            <span class="value">$</span>
+            <span class="tranche">per Month</span>
+          </p>
 
-        <div class="brands">
-            <h4 style="font-size: 1.5em;">Trusted By Over 4000 Big Companies</h4>
-            <div class="brands_items">
-                <img src="logos/fa-brands-1.png" alt="">
-                <img src="logos/fa-brands-2.png" alt="">
-                <img src="logos/fa-brands-3.png" alt="">
-                <img src="logos/fa-brands-4.png" alt="">
-                <img src="logos/fa-brands-5.png" alt="">
+          <div class="advantages">
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
             </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>1GB Cloud storage</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>Email and community support</p>
+            </div>
+          </div>
+          <button class="btn_try_blue">Try for free</button>
         </div>
+        <div class="box3">
+          <span class="nature">PREMIUM</span>
+          <p class="box_detail">Organize across all apps by hand</p>
+          <p class="price-3">
+            19.99
+            <span class="value">$</span>
+            <span class="tranche">per Month</span>
+          </p>
+          <div class="advantages">
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img
+                src="Icons/icn-circle circle-xs secondary-color-1.png"
+                alt=""
+              />
+              <p>Unlimited product updates</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>1GB Cloud storage</p>
+            </div>
+            <div class="adv">
+              <img src="Icons/icn-circle circle-xs mute.png" alt="" />
+              <p>Email and community support</p>
+            </div>
+          </div>
+          <button class="btn_try_blue">Try for free</button>
+        </div>
+      </div>
+
+      <div class="brands flex flex-col items-center justify-center">
+        <h4 style="font-size: 1.5em" class="font-bold">
+          Trusted By Over 4000 Big Companies
+        </h4>
+        <div
+          class="py-[3em] grid grid-cols-1 gap-[2em] lg:grid-cols-6 justify-center md:grid-cols-2 items-center"
+        >
+          <img class="w-[9em]" src="images/col-md-2.svg" alt="" />
+          <img class="w-[9em]" src="images/col-md-2 (1).svg" alt="" />
+          <img class="w-[9em]" src="images/col-md-2 (2).svg" alt="" />
+          <img class="w-[9em]" src="images/col-md-2 (3).svg" alt="" />
+          <img class="w-[9em]" src="images/col-md-2 (4).svg" alt="" />
+          <img class="w-[9em]" src="images/col-md-2 (5).svg" alt="" />
+        </div>
+      </div>
     </section>
 
     <section class="FAQs">
-        <div class="desc_faqs">
-            <h2 style="font-size: 2em; padding-bottom: 1em;">Pricing FAQs</h2>
-            <p>Problems trying to resolve the conflict between
-                the two major realms of Classical physics</p>
+      <div class="desc_faqs">
+        <h2 style="font-size: 2em; padding-bottom: 1em" class="font-bold">
+          Pricing FAQs
+        </h2>
+        <p>
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics
+        </p>
+      </div>
+      <div class="FAQs_items">
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
         </div>
-        <div class="FAQs_items">
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
-            <div class="FAQ_item">
-                <img src="Icons/icn arrow-right icn-xs (1).png" class="arrow" alt="">
-                <div>
-                    <h5>the quick fox jumps over the lazy dog</h5>
-                    <p>Met minim Mollie non desert Alamo est sit cliquey
-                        dolor do met sent. RELIT official consequent door ENIM
-                        RELIT Mollie. Excitation venial consequent sent
-                        nostrum met.
-                    </p>
-                </div>
-            </div>
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
         </div>
-        <p class="support">Haven’t got your answer ? Contact our support</p>
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
+        </div>
+        <div class="FAQ_item">
+          <img
+            src="Icons/icn arrow-right icn-xs (1).png"
+            class="arrow"
+            alt=""
+          />
+          <div>
+            <h5>the quick fox jumps over the lazy dog</h5>
+            <p>
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent door ENIM RELIT Mollie. Excitation
+              venial consequent sent nostrum met.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="support">Haven’t got your answer ? Contact our support</p>
     </section>
-    <section class="trial">
-        <h2>Start your 14 days free trial</h2>
-        <p>Met minim Mollie non desert Alamo est sit cliquey dolor
-            do met sent. RELIT official consequent.</p>
-        <button class="btn_try_blue" style="font-size: 1em;">Try it free now</button>
 
-        <div class="social_media">
+    <section class="trial text-center">
+      <h2 class="font-bold text-2xl">Start your 14 days free trial</h2>
+      <p class="text-sm">
+        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+        RELIT official consequent.
+      </p>
+      <button
+        class="btn_try_blue transition-transform duration-300 hover:scale-110 font-bold"
+        style="font-size: 1em"
+      >
+        Try it free now
+      </button>
 
-            <img src="Icons/logos_twitter.png" alt="">
-            <img src="Icons/logos_facebook.png" alt="">
-            <img src="Icons/instagram-outlined.png" alt="">
-            <img src="Icons/logos_linkedin-icon.png" alt="">
-        </div>
-        
+      <div class="social_media">
+        <img src="Icons/logos_twitter.png" alt="" />
+        <img src="Icons/logos_facebook.png" alt="" />
+        <img src="Icons/instagram-outlined.png" alt="" />
+        <img src="Icons/logos_linkedin-icon.png" alt="" />
+      </div>
     </section>
+    <div>
+      <div
+        class="flex sm:justify-between flex-col gap-4 items-center px-[3em] pb-[3em] pt-[3em] lg:flex-row"
+      >
+        <h1 class="font-bold text-2xl">Bandage</h1>
+        <div class="flex gap-4">
+          <img src="images/facebook.svg" alt="" />
+          <img src="images/instagram.svg" alt="" />
+          <img src="images/twitter.svg" alt="" />
+        </div>
+      </div>
+      <hr class="max-w-[80rem] py-7 mx-auto" />
+    </div>
 
     <footer>
-        <div class="top_footer">
-            <h1>Bandage</h1>
-            <div class="media">
-                <img src="Icons/facebook (1).png" alt="">
-                <img src="Icons/instagram.png" alt="">
-                <img src="Icons/logos_twitter.png" alt="">
-            </div>
+      <div class="grid lg:grid-cols-5 mx-10 gap-4 sm:grid-cols-2 pb-5">
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Company Info</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class=" ">About Us</li>
+            <li class="">Carrier</li>
+            <li class="">We are hiring</li>
+            <li class=" ">Blog</li>
+          </ul>
         </div>
-        <hr>
-        <div class="center_footer">
 
-            <div>
-                <h2>Company Info</h2>
-                <a href="">About Us</a>
-                <a href="">Carrier</a>
-                <a href="">We are hiring</a>
-                <a href="">Blog</a>
-            </div>
-            <div>
-                <h2>Legal</h2>
-                <a href="">About Us</a>
-                <a href="">Carrier</a>
-                <a href="">We are hiring</a>
-                <a href="">Blog</a>
-            </div>
-            <div>
-                <h2>Features</h2>
-                <a href="">Business Marketing</a>
-                <a href="">User Analytic</a>
-                <a href="">Live Chat</a>
-                <a href="">Unlimited Support</a>
-            </div>
-            <div>
-                <h2>Resources</h2>
-                <a href="">IOS & Android</a>
-                <a href="">Watch a Demo</a>
-                <a href="">Customers</a>
-                <a href="">API</a>
-            </div>
-            <div class="especial">
-                <h2>Get In Touch</h2>
-                <p class="get">
-                    <input type="email" placeholder="Your Email" class="email">
-                    <input type="button" value="Suscribe" class="suscribe">
-                </p>
-                <p>Lore imp sum dolor Amit</p>
-            </div>
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Legal</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">About Us</li>
+            <li class="">Carrier</li>
+            <li class="">We are hiring</li>
+            <li class="">Blog</li>
+          </ul>
         </div>
-        <div class="bottom_footer">
-            <p>Made With Love By Finland All Right Reserved </p>
+
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Features</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">Business Marketing</li>
+            <li class="">User Analytic</li>
+            <li class="">Live Chat</li>
+            <li class="">Unlimited Support</li>
+          </ul>
         </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em] mb-5">Resources</h5>
+          <ul class="text-[1.1em] space-y-4 text-[#737373]">
+            <li class="">IOS & Android</li>
+            <li class="">Watch a Demo</li>
+            <li class="">Customers</li>
+            <li class="">API</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
+          <div class="flex flex-cols-2 my-6">
+            <input
+              class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[10em] text-[1em]"
+              type="text"
+              placeholder="Your Email"
+            />
+            <button
+              class="bg-[#23A6F0] text-white text-[0.90em] rounded-r-lg lg:w-[6em] w-[6em] -ml-[3em] mr-10 transition-transform duration-300 hover:scale-110 drop-shadow"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
+        </div>
+      </div>
+
+      <div class="bg-[#737373] bg-opacity-10 py-5">
+        <p class="font-bold text-[#737373] text-center">
+          Made With Love By Finland All Right Reserved
+        </p>
+      </div>
     </footer>
-</body>
-<script>
-     
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".menu ul");
-    const cross = document.querySelector(".cross");
 
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("mobile-menu");
-    });
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const menu = document.querySelector(".menu ul");
+      const cross = document.querySelector(".cross");
 
-    cross.addEventListener("click", () => {
-      menu.classList.remove("mobile-menu");
-    });
-  </script>
+      hamburger.addEventListener("click", () => {
+        menu.classList.toggle("mobile-menu");
+      });
+
+      cross.addEventListener("click", () => {
+        menu.classList.remove("mobile-menu");
+      });
+    </script>
+  </body>
 </html>
