@@ -13,32 +13,178 @@
       rel="stylesheet"
     />
     <link href="./output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1a7f93b397.js" crossorigin="anonymous"></script>
+    <style>
+      
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px 0px 50px;
+flex-wrap: wrap;
+gap: 30px;
+}
+header h1{
+color: rgba(37, 43, 66, 1);
+}
+.icon_responsive{
+    display: none;
+    cursor: pointer;
+    width: 100px;
+    justify-content:  space-between;
+}
+.cross{
+    font-size: 40px;
+     opacity: 0;
+}
+.menu ul {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+.menu ul a{
+    padding: 5px;
+    color:rgba(115, 115, 115, 1) ; 
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.1s;
+}
+.menu ul a:hover{
+    border-radius: 5px;
+    color: #23A6F0;
+    transition: 0.1s;
+}
+.btn_login{
+    background-color: white;
+    color: #23A6F0;
+    padding: 10px 20px;
+    border-style: none;
+    font-weight: bold;
+    font-size: 1em;
+    
+}
+.btn_member{
+    text-align: center;
+    background: #1678F2;
+    color: rgb(255, 255, 255);
+    padding: 0.85em;
+    font-size: 1em;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 5px;
+    transition: all ease 0.2s;
+    display: flex;
+    gap: 0.3em;
+    align-items: center;
+}
+.btn_member:hover{
+    transition: all ease 0.2s;
+transform: scaleX(1.05);
+}
+ 
+.content{
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.pr, .home{
+    color: rgba(115, 115, 115, 1);
+    font-size: 15px; 
+    font-weight: bold;
+}
+.title_content{
+    font-size: 3em;
+}
+.content p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.content p a{
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (max-width:639px){
+.presentation{
+    position: relative;
+}
+    .icon_responsive {
+        display:flex ;
+    }
+
+    .cross {
+        color: rgba(115, 115, 115, 1);
+ opacity: 1;
+        position: absolute;
+        right: 20px;
+        top: 50px;
+        z-index: 5;
+    }
+ 
+    .buttons_header{
+        display: none;
+    }
+    .menu ul {
+        background-color: rgba(250, 250, 250, 1);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        text-align: center;
+        padding-left: 0px;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+        z-index: 5;
+    }
+
+    .menu ul a {
+font-weight: 400px;
+    }
+    .menu ul a:hover {
+        color: #23A6F0;
+    }
+
+    .menu ul.mobile-menu {
+        margin-left: 0;
+        transition: all 0.5s ease;
+    }
+  }
+    </style>
   </head>
   <body class="font-[Montserrat]">
-    <header class="flex justify-between items-center pt-6 px-[4.5em]">
-      <h2 class="text-3xl font-bold">Bandage</h2>
-      <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
-        <ul
-          class="flex justify-between gap-5 font-bold text-[1em] text-[#737373]"
-        >
-          <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="index.html">Teams</a></li>
-          <li class="hover:text-[#23A6F0]"><a href="index.html">Pricing</a></li>
-          <li class="hover:text-[#23A6F0]">
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
+    <header>
+      <h1 style="font-size: 1.5em;" class="font-bold">Bandage</h1>
+      <nav class="menu">
+          <ul>
+               <i class="fa-solid fa-xmark cross"></i>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="teams.html">Teams</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
       </nav>
-      <div class="flex justify-between items-center gap-[45px]">
-        <span class="text-[#23A6F0] font-bold text-[1em]">Login</span>
-        <button
-          class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
-        >
-          Become a member
-          <span><img src="images/Vector.svg" alt="" /></span>
-        </button>
+      <div class="buttons_header flex">
+          <button class="btn_login">Login</button>
+          <button class="btn_member">Become a member <img src="Icons/Vector.png" alt=""></button>
       </div>
-    </header>
+    <div class="icon_responsive">
+      <img src="Icons/search.png" class="search" alt="">
+      <img src="Icons/shop.png" class="shop" alt="">
+      <img src="Icons/hamburger.png" class="hamburger" alt="">
+    </div>
+  </header>
 
     <section>
       <div
@@ -390,5 +536,20 @@
       const obj3 = document.getElementById("Partners");
       animateVal2(obj3, 0, 100, 1500);
     </script>
+    <script>
+      // barre de navigation responsive
+      const hamburger = document.querySelector(".hamburger")
+      const menu = document.querySelector(".menu ul")
+      const cross = document.querySelector(".cross")
+  
+      hamburger.addEventListener('click', () => {
+          menu.classList.toggle('mobile-menu')
+      })
+  
+      cross.addEventListener('click', () => {
+          menu.classList.remove('mobile-menu')
+  
+      })
+  </script>
   </body>
 </html>
