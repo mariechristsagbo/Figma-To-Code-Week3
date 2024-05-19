@@ -83,8 +83,8 @@
             </style>
   </head>
   <body class="font-[Montserrat]">
-    <header class="lg:block hidden">
-        <div class="flex justify-between items-center pt-6 px-[4.5em]">
+    <header class="lg:block hidden max-w-[1440px] mx-auto px-[6.5em]">
+      <div class="flex justify-between items-center pt-6">
         <h2 class="text-3xl font-bold">Bandage</h2>
         <nav class="lg:flex lg:justify-around lg:items-center lg:gap-10 hidden">
           <ul
@@ -92,8 +92,12 @@
           >
             <li class="hover:text-[#23A6F0]"><a href="index.html">Home</a></li>
             <li class="hover:text-[#23A6F0]"><a href="teams.html">Teams</a></li>
-            <li class="hover:text-[#23A6F0]"><a href="pricing.html">Pricing</a></li>
-            <li class="hover:text-[#23A6F0]"><a href="contact.html">Contact</a></li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="pricing.html">Pricing</a>
+            </li>
+            <li class="hover:text-[#23A6F0]">
+              <a href="contact.html">Contact</a>
+            </li>
           </ul>
         </nav>
         <div class="flex justify-between items-center gap-[45px]">
@@ -102,20 +106,20 @@
             class="flex transition-transform duration-300 hover:scale-110 justify-around items-center gap-2 text-white p-[0.85em] rounded-md text-[1em] font-bold bg-primary-color"
           >
             Become a member
-            <span><img src="assets/icons/Vector.svg" alt="" /></span>
+            <span><img src="./assets/icons/Vector.svg" alt="" /></span>
           </button>
         </div>
       </div>
-      </header>
+    </header>
 
       <section class="block lg:hidden">
         <header class="flex flex-col items-center px-[1.5em] pt-[2em] ">
              <div class="flex items-center justify-between w-full mb-8">
               <h2 class="text-2xl font-bold"> Bandage </h2>
               <div class="flex space-x-4 justify-center items-center icon_responsive cursor-pointer">
-                <div><img src="assets/icons/search.svg" alt="" srcset="" class="search"></div>
-                <div><img src="assets/icons/shop.svg" alt="" class="shop"></div>
-                <div><img src="assets/icons/menu.svg" alt="" class="hamburger"></div>
+                <div><img src="./assets/icons/search.svg" alt="" srcset="" class="search"></div>
+                <div><img src="./assets/icons/shop.svg" alt="" class="shop"></div>
+                <div><img src="./assets/icons/menu.svg" alt="" class="hamburger"></div>
               </div>
              </div>
   
@@ -136,7 +140,7 @@
 
     <section>
       <div
-        class="flex lg:justify-around items-center lg:py-3 py-[4em] flex-col text-center lg:flex-row"
+        class="flex lg:justify-around items-center lg:py-3 py-[4em] flex-col text-center lg:flex-row max-w-[1440px] mx-auto"
       >
         <div class="lg:text-left lg:pl-[2em]">
           <p class="font-bold lg:text-[1em] text-[1em]">CONTACT US</p>
@@ -234,9 +238,9 @@
     </section>
 
     
-    <div>
+    <div class="max-w-[1440px] mx-auto px-4">
       <div
-        class="flex sm:justify-between flex-col gap-4 items-center px-[3em] pb-[3em] pt-[3em] lg:flex-row"
+        class="flex sm:justify-between flex-col gap-4 items-center pb-[3em] pt-[3em] lg:flex-row"
       >
         <h1 class="font-bold text-2xl">Bandage</h1>
         <div class="flex gap-4">
@@ -245,11 +249,11 @@
           <img src="assets/icons/twitter.svg" alt="" />
         </div>
       </div>
-      <hr class="max-w-[80rem] py-7 mx-auto" />
+      <hr class="w-full py-7 mx-auto" />
     </div>
 
     <footer>
-      <div class="grid lg:grid-cols-5 mx-10 gap-4 sm:grid-cols-2 pb-5">
+      <div class="grid lg:grid-cols-5 gap-4 sm:grid-cols-2 pb-5 max-w-[1440px] mx-auto px-4">
         <div>
           <h5 class="font-bold text-[1.3em] mb-5">Company Info</h5>
           <ul class="text-[1.1em] space-y-4 text-[#737373]">
@@ -291,9 +295,9 @@
         </div>
 
         <div>
-            <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
-            <div class="flex flex-cols-2 my-6 ">
-              <input
+          <h5 class="font-bold text-[1.3em]">Get In Touch</h5>
+          <div class="flex flex-cols-2 my-6 ">
+            <input
               class="border border-gray-800 text-black py-4 lg:w-[10em] rounded-lg text-left pl-3 w-[14em] text-[1em]"
               type="text"
               placeholder="Your Email"
@@ -303,14 +307,14 @@
             >
               Subscribe
             </button>
-            </div>
-            <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
           </div>
+          <p class="font-bold text-[#737373]">Lore imp sum dolor Amit</p>
+        </div>
       </div>
 
-      <div class="bg-[#737373] bg-opacity-10 py-5">
+      <div class="bg-[#737373] bg-opacity-10 py-5 px-2 lg:px-0">
         <p class="font-bold text-[#737373] text-center">
-          Made With Love By Finland All Right Reserved
+          Made With ❤️​ By Finland All Right Reserved
         </p>
       </div>
     </footer>
